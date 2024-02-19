@@ -1,5 +1,12 @@
 // import "./styles.css" assert { type: 'css' };
 
+// Menu data structure
+var menuLinks = [
+    { text: 'about', href: '/about' },
+    { text: 'catalog', href: '/catalog' },
+    { text: 'orders', href: '/orders' },
+    { text: 'account', href: '/account' },
+];
 
 // Get HTML head element
 let head = document.getElementsByTagName('HEAD')[0];
@@ -66,5 +73,29 @@ topMenuEl.style.backgroundColor = "#0e9aa7"
 
 // 4. Add a class of flex-around to topMenuEl.
 topMenuEl.classList.add('flex-around')
+
+/* 
+Part 3: Adding Menu Buttons
+ */
+
+// To continue:
+// 1. Iterate over the entire menuLinks array and for each "link" object:
+// 2. Create an <a> element.
+// 3. On the new element, add an href attribute with its value set to the href property of the "link" object.
+// 4. Set the new element's content to the value of the text property of the "link" object.
+// 5. Append the new element to the topMenuEl element.
+for (let link of menuLinks) {
+    newElement = document.createElement('a')
+    newElement.href = link.href
+    newElement.textContent = link.text
+    console.log(newElement);
+    topMenuEl.appendChild(newElement)
+}
+
+
+
+
+
+
 
 
