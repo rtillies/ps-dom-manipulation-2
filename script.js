@@ -1,18 +1,49 @@
 // import "./styles.css" assert { type: 'css' };
 // import "./styles.css";
 
-// Menu data structure from Part 3
+// Menu data structure from ALAB Part 3
+// var menuLinks = [
+//   { text: "about", href: "/about" },
+//   { text: "catalog", href: "/catalog" },
+//   { text: "orders", href: "/orders" },
+//   { text: "account", href: "/account" },
+// ];
+
+// Menu data structure from RLAB Part 4
 var menuLinks = [
   { text: "about", href: "/about" },
-  { text: "catalog", href: "/catalog" },
-  { text: "orders", href: "/orders" },
-  { text: "account", href: "/account" },
+  {
+    text: "catalog",
+    href: "#",
+    subLinks: [
+      { text: "all", href: "/catalog/all" },
+      { text: "top selling", href: "/catalog/top" },
+      { text: "search", href: "/catalog/search" },
+    ],
+  },
+  {
+    text: "orders",
+    href: "#",
+    subLinks: [
+      { text: "new", href: "/orders/new" },
+      { text: "pending", href: "/orders/pending" },
+      { text: "history", href: "/orders/history" },
+    ],
+  },
+  {
+    text: "account",
+    href: "#",
+    subLinks: [
+      { text: "profile", href: "/account/profile" },
+      { text: "sign out", href: "/account/signout" },
+    ],
+  },
 ];
 
-/* 
-  * Get HTML head element
-  * Create new link Element and set attributes
-  * Append link element to HTML head
+/*
+ * Get HTML head element
+ * Create new link Element and set attributes
+ * Append link element to HTML head
  */
 // let head = document.getElementsByTagName("HEAD")[0];
 // let link = document.createElement("link");
@@ -20,7 +51,6 @@ var menuLinks = [
 // link.type = "text/css";
 // link.href = "src/styles.css";
 // head.appendChild(link);
-
 
 /* 
 Part 1: Getting Started
@@ -33,10 +63,10 @@ const mainEl = document.querySelector("main");
 // console.log(mainEl);
 
 // 2. Set the background color of mainEl to the value stored in the --main-bg CSS custom property.
-  // Hint: Assign a string that uses the CSS var() function like this: 'var(--main-bg)'.
-const root = document.querySelector(':root')
+// Hint: Assign a string that uses the CSS var() function like this: 'var(--main-bg)'.
+const root = document.querySelector(":root");
 const rootStyle = getComputedStyle(root);
-const mainBG = rootStyle.getPropertyValue("--main-bg")
+const mainBG = rootStyle.getPropertyValue("--main-bg");
 mainEl.style.backgroundColor = mainBG;
 
 // console.log(root);
@@ -66,7 +96,7 @@ const topMenuEl = document.getElementById("top-menu");
 topMenuEl.style.height = "100%";
 
 // 3. Set the background color of topMenuEl to the value stored in the --top-menu-bg CSS custom property.
-const topMenuBG = rootStyle.getPropertyValue("--top-menu-bg")
+const topMenuBG = rootStyle.getPropertyValue("--top-menu-bg");
 topMenuEl.style.backgroundColor = topMenuBG;
 
 // 4. Add a class of flex-around to topMenuEl.
@@ -77,11 +107,11 @@ Part 3: Adding Menu Buttons
 */
 
 // To continue:
-  // 1. Iterate over the entire menuLinks array and for each "link" object:
-  // 2. Create an <a> element.
-  // 3. On the new element, add an href attribute with its value set to the href property of the "link" object.
-  // 4. Set the new element's content to the value of the text property of the "link" object.
-  // 5. Append the new element to the topMenuEl element.
+// 1. Iterate over the entire menuLinks array and for each "link" object:
+// 2. Create an <a> element.
+// 3. On the new element, add an href attribute with its value set to the href property of the "link" object.
+// 4. Set the new element's content to the value of the text property of the "link" object.
+// 5. Append the new element to the topMenuEl element.
 for (let link of menuLinks) {
   newElement = document.createElement("a");
   newElement.href = link.href;
@@ -94,24 +124,24 @@ for (let link of menuLinks) {
 */
 
 // 1. Select and cache the <nav id="sub-menu"> element in a variable named subMenuEl.
-const subMenuEl = document.querySelector('#sub-menu')
+const subMenuEl = document.querySelector("#sub-menu");
 
 // 2. Set the height subMenuEl element to be "100%".
 subMenuEl.style.height = "100%";
 
-
 // 3. Set the background color of subMenuEl to the value stored in the --sub-menu-bg CSS custom property.
-const subMenuBG = rootStyle.getPropertyValue("--sub-menu-bg")
+const subMenuBG = rootStyle.getPropertyValue("--sub-menu-bg");
 subMenuEl.style.backgroundColor = subMenuBG;
 
 // 4. Add the class of flex-around to the subMenuEl element.
 subMenuEl.classList.add("flex-around");
 
 // 5. Set the CSS position property of subMenuEl to the value of absolute.
-subMenuEl.style.position = 'absolute'
+subMenuEl.style.position = "absolute";
 
 // 6. Set the CSS top property of subMenuEl to the value of 0.
-subMenuEl.style.top = 0
+subMenuEl.style.top = 0;
+
 
 
 // Final Output
