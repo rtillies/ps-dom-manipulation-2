@@ -107,6 +107,12 @@ subMenuEl.style.backgroundColor = subMenuBG;
 // 4. Add the class of flex-around to the subMenuEl element.
 subMenuEl.classList.add("flex-around");
 
+// 5. Set the CSS position property of subMenuEl to the value of absolute.
+subMenuEl.style.position = 'absolute'
+
+// 6. Set the CSS top property of subMenuEl to the value of 0.
+subMenuEl.style.top = 0
+
 
 // Final Output
 console.log("Final Root");
