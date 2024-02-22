@@ -9,17 +9,18 @@ var menuLinks = [
   { text: "account", href: "/account" },
 ];
 
-// Get HTML head element
-let head = document.getElementsByTagName("HEAD")[0];
-
-// Create new link Element and set attributes
-let link = document.createElement("link");
-link.rel = "stylesheet";
-link.type = "text/css";
-link.href = "src/styles.css";
-
-// Append link element to HTML head
+/* 
+  * Get HTML head element
+  * Create new link Element and set attributes
+  * Append link element to HTML head
+ */
+// let head = document.getElementsByTagName("HEAD")[0];
+// let link = document.createElement("link");
+// link.rel = "stylesheet";
+// link.type = "text/css";
+// link.href = "src/styles.css";
 // head.appendChild(link);
+
 
 /* 
 Part 1: Getting Started
@@ -33,9 +34,14 @@ let mainEl = document.getElementsByTagName("main")[0];
 // 2. Set the background color of mainEl to the value stored in the --main-bg CSS custom property.
     // Hint: Assign a string that uses the CSS var() function like this: 'var(--main-bg)'.
 let root = document.querySelector(':root')
-let style = getComputedStyle(root);
-let mainBG = style.getPropertyValue("--main-bg")
+let rootStyle = getComputedStyle(root);
+const mainBG = rootStyle.getPropertyValue("--main-bg")
 mainEl.style.backgroundColor = mainBG;
+
+// console.log(root);
+// console.log(style);
+// console.log(`mainBG: ${mainBG}`);
+// console.log(mainEl);
 
 // 3. Set the content of mainEl to <h1>DOM Manipulation</h1>. There are a variety of ways to do this; pick whichever one that you think works best in this situation.
 let h1 = document.createElement("h1");
@@ -59,7 +65,8 @@ console.log(topMenuEl);
 topMenuEl.style.height = "100%";
 
 // 3. Set the background color of topMenuEl to the value stored in the --top-menu-bg CSS custom property.
-topMenuEl.style.backgroundColor = "#0e9aa7";
+const topMenuBG = rootStyle.getPropertyValue("--top-menu-bg")
+topMenuEl.style.backgroundColor = topMenuBG;
 
 // 4. Add a class of flex-around to topMenuEl.
 topMenuEl.classList.add("flex-around");
