@@ -142,6 +142,22 @@ subMenuEl.style.position = "absolute";
 // 6. Set the CSS top property of subMenuEl to the value of 0.
 subMenuEl.style.top = 0;
 
+/* 
+  Part 4 Adding Menu Interaction
+*/
+// 1. Select and cache the all of the <a> elements inside of topMenuEl in a variable named topMenuLinks.
+// 2. Attach a delegated 'click' event listener to topMenuEl.
+  // The first line of code of the event listener function should call the event object's preventDefault() method.
+  // The second line of code of the function should immediately return if the element clicked was not an <a> element.
+  // Log the content of the <a> to verify the handler is working.
+
+// for (let link of menuLinks) {
+//   newElement = document.createElement("a");
+//   newElement.href = link.href;
+//   newElement.textContent = link.text;
+//   topMenuEl.appendChild(newElement);
+// }
+
 
 
 // Final Output
