@@ -32,7 +32,7 @@ let mainEl = document.getElementsByTagName("main")[0];
 // console.log(mainEl);
 
 // 2. Set the background color of mainEl to the value stored in the --main-bg CSS custom property.
-    // Hint: Assign a string that uses the CSS var() function like this: 'var(--main-bg)'.
+  // Hint: Assign a string that uses the CSS var() function like this: 'var(--main-bg)'.
 let root = document.querySelector(':root')
 let rootStyle = getComputedStyle(root);
 const mainBG = rootStyle.getPropertyValue("--main-bg")
@@ -59,7 +59,7 @@ Next, create a blank menu bar that we can use to later add some interactivity to
 
 // 1. Select and cache the <nav id="top-menu"> element in a variable named topMenuEl.
 let topMenuEl = document.getElementById("top-menu");
-console.log(topMenuEl);
+// console.log(topMenuEl);
 
 // 2. Set the height of the topMenuEl element to be 100%.
 topMenuEl.style.height = "100%";
@@ -76,11 +76,11 @@ Part 3: Adding Menu Buttons
 */
 
 // To continue:
-// 1. Iterate over the entire menuLinks array and for each "link" object:
-    // 2. Create an <a> element.
-    // 3. On the new element, add an href attribute with its value set to the href property of the "link" object.
-    // 4. Set the new element's content to the value of the text property of the "link" object.
-    // 5. Append the new element to the topMenuEl element.
+  // 1. Iterate over the entire menuLinks array and for each "link" object:
+  // 2. Create an <a> element.
+  // 3. On the new element, add an href attribute with its value set to the href property of the "link" object.
+  // 4. Set the new element's content to the value of the text property of the "link" object.
+  // 5. Append the new element to the topMenuEl element.
 for (let link of menuLinks) {
   newElement = document.createElement("a");
   newElement.href = link.href;
@@ -88,4 +88,5 @@ for (let link of menuLinks) {
   topMenuEl.appendChild(newElement);
 }
 
+console.log("Final Root");
 console.log(root);
