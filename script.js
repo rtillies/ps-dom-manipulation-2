@@ -89,5 +89,25 @@ for (let link of menuLinks) {
   topMenuEl.appendChild(newElement);
 }
 
+/* 
+  Part 3: Creating the Submenu
+*/
+
+// 1. Select and cache the <nav id="sub-menu"> element in a variable named subMenuEl.
+const subMenuEl = document.querySelector('#sub-menu')
+
+// 2. Set the height subMenuEl element to be "100%".
+subMenuEl.style.height = "100%";
+
+
+// 3. Set the background color of subMenuEl to the value stored in the --sub-menu-bg CSS custom property.
+const subMenuBG = rootStyle.getPropertyValue("--sub-menu-bg")
+subMenuEl.style.backgroundColor = subMenuBG;
+
+// 4. Add the class of flex-around to the subMenuEl element.
+subMenuEl.classList.add("flex-around");
+
+
+// Final Output
 console.log("Final Root");
 console.log(root);
