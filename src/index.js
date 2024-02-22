@@ -1,4 +1,5 @@
 // import "./styles.css" assert { type: 'css' };
+// import "./styles.css";
 
 // Menu data structure from Part 3
 var menuLinks = [
@@ -18,7 +19,7 @@ link.type = "text/css";
 link.href = "src/styles.css";
 
 // Append link element to HTML head
-head.appendChild(link);
+// head.appendChild(link);
 
 /* 
 Part 1: Getting Started
@@ -31,18 +32,10 @@ let mainEl = document.getElementsByTagName("main")[0];
 
 // 2. Set the background color of mainEl to the value stored in the --main-bg CSS custom property.
     // Hint: Assign a string that uses the CSS var() function like this: 'var(--main-bg)'.
-// let root = document.documentElement
-let root = document.querySelector(":root");
-// let root = document.querySelector('body')
+let root = document.querySelector(':root')
 let style = getComputedStyle(root);
-// let mainBG = style.getPropertyValue("--main-bg")
-let mainBG = style.getPropertyValue("var(--main-bg)");
-
-console.log(root);
-console.log(style);
-console.log(`mainBG: ${mainBG}`);
-document.body.style.backgroundColor = "#4a4e4d";
-// document.mainEl.style.backgroundColor = "blue";
+let mainBG = style.getPropertyValue("--main-bg")
+mainEl.style.backgroundColor = mainBG;
 
 // 3. Set the content of mainEl to <h1>DOM Manipulation</h1>. There are a variety of ways to do this; pick whichever one that you think works best in this situation.
 let h1 = document.createElement("h1");
