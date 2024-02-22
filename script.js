@@ -28,13 +28,14 @@ Start the project by building a main content element using the following steps:
 */
 
 // 1. Select and cache the <main> element in a variable named mainEl.
-let mainEl = document.getElementsByTagName("main")[0];
+// let mainEl = document.getElementsByTagName("main")[0];
+const mainEl = document.querySelector("main");
 // console.log(mainEl);
 
 // 2. Set the background color of mainEl to the value stored in the --main-bg CSS custom property.
   // Hint: Assign a string that uses the CSS var() function like this: 'var(--main-bg)'.
-let root = document.querySelector(':root')
-let rootStyle = getComputedStyle(root);
+const root = document.querySelector(':root')
+const rootStyle = getComputedStyle(root);
 const mainBG = rootStyle.getPropertyValue("--main-bg")
 mainEl.style.backgroundColor = mainBG;
 
@@ -44,7 +45,7 @@ mainEl.style.backgroundColor = mainBG;
 // console.log(mainEl);
 
 // 3. Set the content of mainEl to <h1>DOM Manipulation</h1>. There are a variety of ways to do this; pick whichever one that you think works best in this situation.
-let h1 = document.createElement("h1");
+const h1 = document.createElement("h1");
 h1.textContent = "DOM Manipulation";
 mainEl.appendChild(h1);
 
@@ -58,7 +59,7 @@ Next, create a blank menu bar that we can use to later add some interactivity to
 */
 
 // 1. Select and cache the <nav id="top-menu"> element in a variable named topMenuEl.
-let topMenuEl = document.getElementById("top-menu");
+const topMenuEl = document.getElementById("top-menu");
 // console.log(topMenuEl);
 
 // 2. Set the height of the topMenuEl element to be 100%.
