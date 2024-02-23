@@ -225,6 +225,24 @@ topMenuEl.addEventListener('click', (event) => {
   buildSubmenu(linkObject.subLinks)
 })
 
+subMenuEl.addEventListener('click', (event) => {
+  event.preventDefault()
+  const target = event.target
+  if (!(target.tagName === 'A')) return;
+  const content = target.textContent
+  console.log(content);
+
+  subMenuEl.style.top = 0;
+  
+  topMenuLinks.forEach((link) => {
+    link.classList.remove('active')
+  })
+
+  h1.textContent = content
+
+})
+
+
 
 
 // Final Output
