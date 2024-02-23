@@ -51,7 +51,7 @@ mainEl.appendChild(h1);
 
 // 4. Add a class of flex-ctr to mainEl.
 // Hint: Use the Element.classList API.
-h1.classList.add("flex-ctr");
+mainEl.classList.add("flex-ctr");
 
 /* 
 Part 2: Creating a Menu Bar
@@ -149,6 +149,10 @@ for (const node of topMenuEl.childNodes) {
     b. Otherwise, set the CSS top property of subMenuEl to 0.
       * Hint: Caching the "link" object will come in handy for passing its subLinks array later.
 */
+
+const newH1 = document.createElement("h1");
+mainEl.appendChild(newH1);
+
 topMenuEl.addEventListener('click', (event) => {
   event.preventDefault()
   const target = event.target
@@ -177,7 +181,7 @@ topMenuEl.addEventListener('click', (event) => {
 
   function buildSubmenu(subLinks) {
     if (!subLinks) {
-      h1.textContent = content.toUpperCase()
+      newH1.textContent = content.toUpperCase()
       return;
     }
     
@@ -206,9 +210,9 @@ subMenuEl.addEventListener('click', (event) => {
     link.classList.remove('active')
   })
 
-  h1.textContent = content.toUpperCase()
+  newH1.textContent = content.toUpperCase()
 })
 
 // Final Output
-// console.log("Final Root");
-// console.log(root);
+console.log("Final Root");
+console.log(root);
