@@ -209,6 +209,20 @@ topMenuEl.addEventListener('click', (event) => {
   } else {
     subMenuEl.style.top = 0;
   }
+
+  function buildSubmenu(subLinks) {
+    // console.log("Sub Menu");
+    // console.log(subMenuEl);
+    subMenuEl.textContent = ''
+    
+    subLinks.forEach(link => {
+      const a = document.createElement('a')
+      a.href = link.href
+      a.textContent = link.text
+      subMenuEl.appendChild(a)
+    })
+  }
+  buildSubmenu(linkObject.subLinks)
 })
 
 
