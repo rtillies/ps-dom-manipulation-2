@@ -149,11 +149,8 @@ subMenuEl.style.top = 0;
 // 1. Select and cache the all of the <a> elements inside of topMenuEl in a variable named topMenuLinks.
 const topMenuLinks = []
 for (const node of topMenuEl.childNodes) {
-  console.log(node);
   topMenuLinks.push(node)
 }
-console.log("Top Menu Links");
-console.log(topMenuLinks);
 
 // 2. Attach a delegated 'click' event listener to topMenuEl.
 /*
@@ -186,24 +183,22 @@ topMenuEl.addEventListener('click', (event) => {
   event.preventDefault()
   const target = event.target
   if (!(target.tagName === 'A')) return;
+
   const content = target.textContent
-  // console.log(target.textContent);
   console.log(content);
+
   target.classList.toggle('active')
   
   topMenuLinks.forEach((link) => {
-    // console.log(link);
     if (target !== link) {
       link.classList.remove('active')
     }
   })
 
-  function matchTarget(link) {
+  const linkObject = menuLinks.find(link => {
     return link.text === content;
-  }
+  })
 
-  const linkObject = menuLinks.find(matchTarget)
-  console.log(linkObject);
   if (linkObject.subLinks && target.classList.contains('active')) {
     subMenuEl.style.top = "100%";
   } else {
@@ -211,8 +206,11 @@ topMenuEl.addEventListener('click', (event) => {
   }
 
   function buildSubmenu(subLinks) {
-    // console.log("Sub Menu");
-    // console.log(subMenuEl);
+    if (!subLinks) {
+      h1.textContent = content
+      return;
+    }
+    
     subMenuEl.textContent = ''
     
     subLinks.forEach(link => {
@@ -239,12 +237,9 @@ subMenuEl.addEventListener('click', (event) => {
   })
 
   h1.textContent = content
-
 })
 
 
-
-
 // Final Output
-console.log("Final Root");
-console.log(root);
+// console.log("Final Root");
+// console.log(root);
