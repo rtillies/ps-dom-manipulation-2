@@ -159,7 +159,11 @@ console.log(topMenuLinks);
   // The first line of code of the event listener function should call the event object's preventDefault() method.
   // The second line of code of the function should immediately return if the element clicked was not an <a> element.
   // Log the content of the <a> to verify the handler is working.
-
+topMenuEl.addEventListener('click', (event) => {
+  event.preventDefault()
+  if (!(event.target.tagName === 'A')) return;
+  console.log(event.target.textContent);
+})
 
 // Final Output
 console.log("Final Root");
