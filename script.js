@@ -204,7 +204,7 @@ topMenuEl.addEventListener('click', (event) => {
 
   const linkObject = menuLinks.find(matchTarget)
   console.log(linkObject);
-  if (linkObject.subLinks) {
+  if (linkObject.subLinks && target.classList.contains('active')) {
     subMenuEl.style.top = "100%";
   } else {
     subMenuEl.style.top = 0;
