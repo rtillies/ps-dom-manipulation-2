@@ -161,8 +161,18 @@ console.log(topMenuLinks);
   // Log the content of the <a> to verify the handler is working.
 topMenuEl.addEventListener('click', (event) => {
   event.preventDefault()
-  if (!(event.target.tagName === 'A')) return;
-  console.log(event.target.textContent);
+  const target = event.target
+  if (!(target.tagName === 'A')) return;
+  console.log(target.textContent);
+  target.classList.toggle('active')
+  
+  topMenuLinks.forEach((link) => {
+    // console.log(link);
+    if (target !== link) {
+      link.classList.remove('active')
+    }
+  })
+  
 })
 
 // Final Output
