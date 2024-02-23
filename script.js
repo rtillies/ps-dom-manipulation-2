@@ -177,7 +177,7 @@ topMenuEl.addEventListener('click', (event) => {
 
   function buildSubmenu(subLinks) {
     if (!subLinks) {
-      h1.textContent = content
+      h1.textContent = content.toUpperCase()
       return;
     }
     
@@ -206,7 +206,7 @@ subMenuEl.addEventListener('click', (event) => {
     link.classList.remove('active')
   })
 
-  h1.textContent = content
+  h1.textContent = content.toUpperCase()
 })
 
 // Final Output
